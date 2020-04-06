@@ -120,8 +120,6 @@ body {
   transition-property: opacity;
   transition-duration: 0.5s;
   transition-delay: 0s;
-
-
 }
 
 .menuitem {
@@ -170,6 +168,14 @@ body {
 
 .menuitem:nth-of-type(4):hover:after {
   background-color: $ngred;
+  transform: scaleY(20) translateY(-60%);
+}
+.menuitem:nth-of-type(5):hover:after {
+  background-color: $nggreen;
+  transform: scaleY(20) translateY(-60%);
+}
+.menuitem:nth-of-type(6):hover:after {
+  background-color: $ngblue;
   transform: scaleY(20) translateY(-60%);
 }
 .menuitem:hover {
@@ -236,23 +242,79 @@ header .container_flex:after{
 // ***************HEADER*********************
 
 //****************SECTION********************
+article{
+  //max-width: 1440px;
+  margin: auto;
+}
+.owl-carousel{
+  z-index: 0;
+}
 .ta-center{
   text-align: center;
+  color: #fff;
+  font-family: Arial;
 }
 .bg-1{
   background: url("../img/1.jpg") no-repeat center;
   background-size: cover;
 }
 .bg-2{
-  background-image: url("../img/2.jpg");
+  background: url("../img/2.jpg") no-repeat center;
+  background-size: cover;
 }
 .bg-3{
-  background-image: url("../img/3.jpeg");
+  background: url("../img/3.jpeg") no-repeat center;
+  background-size: cover;
 }
 .bg-4{
-  background-image: url("../img/4.jpg");
+  background: url("../img/4.jpg") no-repeat center;
+  background-size: cover;
+}
+.op{
+  background-color: rgba(68, 192, 194, 0.2);
 }
 .pad{
   padding: 140px 0;
+}
+section .owl-carousel h1{
+  font-size: 60px;
+  margin-bottom: 45px;
+}
+section .owl-carousel p{
+  font-size: 22px;
+  margin-bottom: 62px;
+}
+section .owl-carousel a{
+  font-size: 32px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 22px 40px;
+}
+.owl-nav{
+  position: relative;
+  max-width: 1440px;
+  margin: auto;
+}
+.owl-nav .owl-prev:before, .owl-nav .owl-next:before{
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 28px;
+  color: #49cbcd;
+  border-radius: 50%;
+  background-color: #fff;
+  display: block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  bottom: 250px;
+}
+.owl-nav .owl-prev:before{
+  content: "\f053";
+  left: 50px;
+}
+.owl-nav .owl-next:before{
+  content: "\f054";
+  right: 50px;
 }
 //****************SECTION********************
