@@ -6,9 +6,187 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/main_12.css">
+    <link rel="stylesheet" href="css/main_12.scss">
 </head>
 <body>
+<header>
+    <div class="container container_flex">
+        <a href="#"><img class="Logo" src="img/Author.png" alt="Logo"></a>
+        <div class="nav">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Team</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div id="hamburger-open"><span class="spans" id="spanOne"></span><span class="spans" id="spanTwo"></span><span class="spans" id="spanThree"></span></div>
+        <div class="modal-menu">
+            <h2 class="menuitem">Home</h2>
+            <h2 class="menuitem">Service</h2>
+            <h2 class="menuitem">Portfolio</h2>
+            <h2 class="menuitem">Team</h2>
+            <h2 class="menuitem">Blog</h2>
+            <h2 class="menuitem">Contact</h2>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="owl-carousel">
+        <div>
+            <div class="ta-center">
+                <h1>This is a main heading</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <a href="">Learn More</a>
+            </div>
+        <div>
+            <div><p>Praesent tincidunt molestie libero mollis porta. Faucibus leo, ac aliquet magna. Vivamus ullamcorper mollis leo, at sagittis mi pellentesque quis. Praesent nec elit tristique.</p>
+                <h4>Larry Jane</h4>
+                <span>General Manager</span></div>
+        </div>
+        <div>
+            <div><p>Praesent tincidunt molestie libero mollis porta. Faucibus leo, ac aliquet magna. Vivamus ullamcorper mollis leo, at sagittis mi pellentesque quis. Praesent nec elit tristique.</p>
+                <h4>Larry Jane</h4>
+                <span>General Manager</span></div>
+        </div>
+    </div>
+</section>
 
+
+
+
+
+<script
+        src="http://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src='https://cdn.jsdelivr.net/mojs/0.265.6/mo.min.js'></script>
+<script>
+    var timelineOpen = new mojs.Timeline({ speed: 1.5 });
+    var timelineClose = new mojs.Timeline({ speed: 2 });
+
+    var _strokeWidth;
+    var RADIUS = 15;
+    var hamburger = document.querySelector("#hamburger-open");
+
+    var spans = document.getElementsByClassName("spans");
+    var spanOne = document.querySelector("#spanOne");
+    var spanTwo = document.querySelector("#spanTwo");
+    var spanThree = document.querySelector("#spanThree");
+
+    var modalMenu = document.querySelector(".modal-menu");
+
+    var burst1 = new mojs.Burst({
+        parent: hamburger,
+        x: "50%",
+        y: "50%",
+        angle: { 0: 90 },
+        radius: { 30: 45 },
+        count: 3,
+        children: {
+            shape: "circle",
+            radius: RADIUS,
+            scale: { 1: 0 },
+            fill: ["#ff4338", "#00b3e3", "#3cd52e"],
+            duration: 2000,
+            easing: "quad.out"
+        }
+    });
+
+    var burst2 = new mojs.Burst({
+        parent: hamburger,
+        x: "50%",
+        y: "50%",
+        angle: { 0: 90 },
+        radius: { 30: 45 },
+        count: 3,
+        children: {
+            shape: "circle",
+            radius: RADIUS,
+            scale: { 0: 1 },
+            strokeWidth: { 1: 3 },
+            opacity: { 1: 0 },
+            fill: "transparent",
+            stroke: ["#ff4338", "#00b3e3", "#3cd52e"],
+            duration: 2000,
+            easing: "quad.out"
+        }
+    });
+
+    // OPEN
+    var openBackground = new mojs.Shape({
+        fill: "#111820",
+        scale: { 0: 8.5 },
+        radius: 200,
+        delay: 1000,
+        easing: "cubic.out",
+        backwardEasing: "ease.out",
+        duration: 2000
+    });
+
+    burst1.el.style.zIndex = 2;
+
+    // check if the hamburger's been crossed
+    let cross = spanOne.classList.contains("white");
+
+    //timeline with burst and background open
+    timelineOpen.add(burst1, burst2, openBackground);
+    //timeline with background close
+    timelineClose.add(openBackground);
+
+    //click on the hamburger
+    hamburger.addEventListener("click", function(e) {
+        // check if the menu is a cross
+        var cross = spanOne.classList.contains("white");
+
+        modalMenu.classList.toggle("show");
+
+        if (cross) {
+            timelineClose.playBackward();
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].classList.remove("white");
+            }
+            spanOne.classList.remove("spanOneRotate");
+            spanTwo.classList.remove("spanTwoRotate");
+            spanThree.classList.remove("spanThreeHide");
+        } else {
+            timelineOpen.play();
+
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].classList.add("white");
+            }
+
+            spanOne.classList.add("spanOneRotate");
+            spanTwo.classList.add("spanTwoRotate");
+            spanThree.classList.add("spanThreeHide");
+        }
+    });
+    $(document).ready(function(){
+
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:0,
+            nav:true,
+            navText: [ '', ' ' ],
+
+            responsive:{
+                0:{
+                    items:1
+                },
+
+                1000:{
+                    items:1
+                }
+            }
+        });
+    });
+</script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
