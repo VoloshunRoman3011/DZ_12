@@ -1,16 +1,13 @@
 @charset "UTF-8";
 /*************Меню Бургер*******************/
+@import url(owl.carousel.min.css);
+@import url(owl.theme.default.min.css);
+@import url(header.css);
+@import url(../fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css);
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700");
 body, html {
   padding: 0;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden; }
-
-body {
-  position: relative;
-  background: #fff; }
+  margin: 0; }
 
 .close-button {
   cursor: pointer; }
@@ -182,9 +179,6 @@ header .container_flex:after {
   display: block;
   clear: both; }
 
-article {
-  margin: auto; }
-
 .owl-carousel {
   z-index: 0; }
 
@@ -255,5 +249,117 @@ section .owl-carousel a {
 .owl-nav .owl-next:before {
   content: "\f054";
   right: 50px; }
+
+.owl-dots {
+  position: absolute; }
+
+article {
+  background-color: #f1f1f1;
+  padding: 120px 0 100px; }
+  @media screen and (max-width: 1024px) {
+    article {
+      padding: 120px 15px 100px; } }
+  @media screen and (max-width: 768px) {
+    article {
+      padding: 120px 15px 100px; } }
+  @media screen and (max-width: 414px) {
+    article {
+      padding: 15px; } }
+  @media screen and (max-width: 375px) {
+    article {
+      padding: 15px; } }
+  @media screen and (max-width: 360px) {
+    article {
+      padding: 15px; } }
+  @media screen and (max-width: 320px) {
+    article {
+      padding: 15px; } }
+  article form {
+    display: flex;
+    justify-content: center; }
+    @media screen and (max-width: 414px) {
+      article form {
+        flex-direction: column; } }
+    @media screen and (max-width: 375px) {
+      article form {
+        flex-direction: column; } }
+    @media screen and (max-width: 360px) {
+      article form {
+        flex-direction: column; } }
+    @media screen and (max-width: 320px) {
+      article form {
+        flex-direction: column; } }
+    article form label {
+      width: 368px; }
+      @media screen and (max-width: 414px) {
+        article form label {
+          width: 100%;
+          margin-bottom: 15px; } }
+      @media screen and (max-width: 375px) {
+        article form label {
+          width: 100%;
+          margin-bottom: 15px; } }
+      @media screen and (max-width: 360px) {
+        article form label {
+          width: 100%;
+          margin-bottom: 15px; } }
+      @media screen and (max-width: 320px) {
+        article form label {
+          width: 100%;
+          margin-bottom: 15px; } }
+      article form label:nth-child(2) {
+        margin: 0 30px; }
+        @media screen and (max-width: 414px) {
+          article form label:nth-child(2) {
+            margin: 0 0 15px; } }
+        @media screen and (max-width: 375px) {
+          article form label:nth-child(2) {
+            margin: 0 0 15px; } }
+        @media screen and (max-width: 360px) {
+          article form label:nth-child(2) {
+            margin: 0 0 15px; } }
+        @media screen and (max-width: 320px) {
+          article form label:nth-child(2) {
+            margin: 0 0 15px; } }
+      article form label li {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid #ecf0f1;
+        font-size: 15px;
+        font-family: Arial;
+        color: #8c9299;
+        list-style: none;
+        line-height: 45px;
+        background-color: #fff; }
+        article form label li:first-of-type {
+          color: #fff;
+          font-size: 26px;
+          background-color: #485460;
+          line-height: 75px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px; }
+          article form label li:first-of-type:hover {
+            background-color: #49cbcd; }
+        article form label li:nth-child(2) {
+          background-color: #f8f9fb;
+          color: #485460;
+          font-size: 20px;
+          line-height: 68px; }
+        article form label li:last-of-type {
+          background-color: #f8f9fb;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          padding: 28px 0; }
+        article form label li button {
+          color: white;
+          font-size: 17px;
+          background-color: #788492;
+          line-height: 40px;
+          padding: 0 55px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer; }
+          article form label li button:hover {
+            background-color: #49cbcd; }
 
 /*# sourceMappingURL=main_12.css.map */

@@ -1,7 +1,12 @@
 /*************Меню Бургер*******************/
 //fonts
-$ngfont : 'Karla', sans-serif;
+$ngfont: 'Karla', sans-serif;
 
+
+@import "owl.carousel.min.css";
+@import "owl.theme.default.min.css";
+@import "header.css";
+@import "../fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css";
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 //functions & mixins
@@ -22,32 +27,23 @@ $z-indexes: (
   @if index($z-indexes,
           $name) {
     @return (length($z-indexes) - index($z-indexes, $name))+1;
-  }
-  @else {
+  } @else {
     @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
     @return null;
   }
 }
 
 //colors
-$ngwhite : #fff;
-$ngred : #ff4338;
-$ngblue : #00b3e3;
-$nggreen : #3cd52e;
-$ngblack : #111820;
+$ngwhite: #fff;
+$ngred: #ff4338;
+$ngblue: #00b3e3;
+$nggreen: #3cd52e;
+$ngblack: #111820;
 $nggrey: #a5a5a5;
 
 body, html {
   padding: 0;
-  margin:  0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-body {
-  position: relative;
-  background: $ngwhite;
+  margin: 0;
 }
 
 .close-button {
@@ -170,14 +166,17 @@ body {
   background-color: $ngred;
   transform: scaleY(20) translateY(-60%);
 }
+
 .menuitem:nth-of-type(5):hover:after {
   background-color: $nggreen;
   transform: scaleY(20) translateY(-60%);
 }
+
 .menuitem:nth-of-type(6):hover:after {
   background-color: $ngblue;
   transform: scaleY(20) translateY(-60%);
 }
+
 .menuitem:hover {
   color: $ngwhite;
 }
@@ -188,10 +187,11 @@ body {
   transition-duration: 0.5s;
   transition-delay: 1s;
 }
+
 /*************Меню Бургер*******************/
 
 // ***************HEADER*********************
-*{
+* {
   padding: 0;
   margin: 0;
   font-size: inherit;
@@ -199,28 +199,34 @@ body {
   outline: none;
 
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
-.container{
+
+.container {
   max-width: 1170px;
   margin: auto;
 }
-.container_flex{
+
+.container_flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.Logo{
+
+.Logo {
   margin: 30px 0;
 }
-header .nav ul li{
+
+header .nav ul li {
   float: left;
   list-style: none;
   margin-left: 5px;
 }
-header .nav ul li a{
+
+header .nav ul li a {
   font-family: Arial;
   font-size: 15px;
   color: #484c55;
@@ -228,12 +234,14 @@ header .nav ul li a{
   border-bottom: 3px solid inherit;
   transition: 0.3s;
 }
-header .nav ul li a:hover{
+
+header .nav ul li a:hover {
   background: #f8f9fb;
   border-bottom: 3px solid #49cbcd;
   transition: 0.3s;
 }
-header .container_flex:after{
+
+header .container_flex:after {
   content: "";
   display: block;
   clear: both;
@@ -242,60 +250,68 @@ header .container_flex:after{
 // ***************HEADER*********************
 
 //****************SECTION********************
-article{
-  //max-width: 1440px;
-  margin: auto;
-}
-.owl-carousel{
+.owl-carousel {
   z-index: 0;
 }
-.ta-center{
+
+.ta-center {
   text-align: center;
   color: #fff;
   font-family: Arial;
 }
-.bg-1{
+
+.bg-1 {
   background: url("../img/1.jpg") no-repeat center;
   background-size: cover;
 }
-.bg-2{
+
+.bg-2 {
   background: url("../img/2.jpg") no-repeat center;
   background-size: cover;
 }
-.bg-3{
+
+.bg-3 {
   background: url("../img/3.jpeg") no-repeat center;
   background-size: cover;
 }
-.bg-4{
+
+.bg-4 {
   background: url("../img/4.jpg") no-repeat center;
   background-size: cover;
 }
-.op{
+
+.op {
   background-color: rgba(68, 192, 194, 0.2);
 }
-.pad{
+
+.pad {
   padding: 140px 0;
 }
-section .owl-carousel h1{
+
+section .owl-carousel h1 {
   font-size: 60px;
   margin-bottom: 45px;
 }
-section .owl-carousel p{
+
+section .owl-carousel p {
   font-size: 22px;
   margin-bottom: 62px;
 }
-section .owl-carousel a{
+
+section .owl-carousel a {
   font-size: 32px;
   border: 2px solid #fff;
   border-radius: 10px;
   padding: 22px 40px;
 }
-.owl-nav{
+
+.owl-nav {
   position: relative;
   max-width: 1440px;
   margin: auto;
 }
-.owl-nav .owl-prev:before, .owl-nav .owl-next:before{
+
+.owl-nav .owl-prev:before, .owl-nav .owl-next:before {
   width: 50px;
   line-height: 50px;
   text-align: center;
@@ -309,12 +325,194 @@ section .owl-carousel a{
   position: absolute;
   bottom: 250px;
 }
-.owl-nav .owl-prev:before{
+
+.owl-nav .owl-prev:before {
   content: "\f053";
   left: 50px;
 }
-.owl-nav .owl-next:before{
+
+.owl-nav .owl-next:before {
   content: "\f054";
   right: 50px;
 }
+
+.owl-dots {
+  position: absolute;
+}
+
 //****************SECTION********************
+
+
+//$main-color:red;
+//$danger-color: blue;
+//
+//
+@mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+//
+//.div{
+//  max-width: 300px;
+//  height: 600px;
+//  margin: auto;
+//  background-color: $main-color;
+//  @include max-screen(640px) {
+//      max-width: 100px;
+//  }
+//}
+//header{
+//  max-width: 1000px;
+//  margin: auto;
+//  nav{
+//    padding: 25px;
+//    background-color: #000;
+//    ul{
+//      border: 1px solid red;
+//      li{
+//        list-style: none;
+//        a{
+//          text-transform: uppercase;
+//          text-decoration: none;
+//          &:hover{
+//            color: blue;
+//            background-color: #3cd52e;
+//          }
+//          &:after{
+//            content: "";
+//            display: block;
+//            width: 100%;
+//
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+
+article {
+  background-color: #f1f1f1;
+  padding: 120px 0 100px;
+  @include max-screen(1024px){
+    padding: 120px 15px 100px;
+  }
+  @include max-screen(768px){
+    padding: 120px 15px 100px;
+  }
+  @include max-screen(414px){
+    padding: 15px;
+  }
+  @include max-screen(375px){
+    padding: 15px;
+  }
+  @include max-screen(360px){
+    padding: 15px;
+  }
+  @include max-screen(320px){
+    padding: 15px;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    @include max-screen(414px){
+      flex-direction: column;
+    }
+    @include max-screen(375px){
+      flex-direction: column;
+    }
+    @include max-screen(360px){
+      flex-direction: column;
+    }
+    @include max-screen(320px){
+      flex-direction: column;
+    }
+
+    label {
+      width: 368px;
+      @include max-screen(414px){
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      @include max-screen(375px){
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      @include max-screen(360px){
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      @include max-screen(320px){
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      &:nth-child(2) {
+        margin: 0 30px;
+        @include max-screen(414px){
+          margin: 0 0 15px;
+        }
+        @include max-screen(375px){
+          margin: 0 0 15px;
+        }
+        @include max-screen(360px){
+          margin: 0 0 15px;
+        }
+        @include max-screen(320px){
+          margin: 0 0 15px;
+        }
+      }
+
+      li {
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid #ecf0f1;
+        font-size: 15px;
+        font-family: Arial;
+        color: #8c9299;
+        list-style: none;
+        line-height: 45px;
+        background-color: $ngwhite;
+
+        &:first-of-type {
+          color: $ngwhite;
+          font-size: 26px;
+          background-color: #485460;
+          line-height: 75px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          &:hover{
+            background-color: #49cbcd;
+          }
+        }
+
+        &:nth-child(2){
+          background-color: #f8f9fb;
+          color: #485460;
+          font-size: 20px;
+          line-height: 68px;
+        }
+        &:last-of-type{
+          background-color: #f8f9fb;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          padding: 28px 0;
+        }
+        button{
+          color: white;
+          font-size: 17px;
+          background-color: #788492;
+          line-height: 40px;
+          padding: 0 55px;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+          &:hover{
+            background-color: #49cbcd;
+          }
+        }
+      }
+    }
+  }
+}

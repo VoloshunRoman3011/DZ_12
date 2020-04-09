@@ -6,11 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/main_12.css">
-    <link rel="stylesheet" href="css/main_12.scss">
 </head>
 <body>
 <header>
@@ -26,7 +22,8 @@
                 <li><a href="">Contact</a></li>
             </ul>
         </div>
-        <div id="hamburger-open"><span class="spans" id="spanOne"></span><span class="spans" id="spanTwo"></span><span class="spans" id="spanThree"></span></div>
+        <div id="hamburger-open"><span class="spans" id="spanOne"></span><span class="spans" id="spanTwo"></span><span
+                class="spans" id="spanThree"></span></div>
         <div class="modal-menu">
             <h2 class="menuitem">Home</h2>
             <h2 class="menuitem">Service</h2>
@@ -38,42 +35,84 @@
     </div>
 </header>
 <section>
-    <article>
-        <div class="owl-carousel">
-            <div class="bg-1">
-                <div class="ta-center op pad">
-                    <h1>This is a main heading</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="">Learn More</a>
-                </div>
-            </div>
-            <div class="bg-2">
-                <div class="ta-center op pad">
-                    <h1>This is a main heading</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="">Learn More</a>
-                </div>
-            </div>
-            <div class="bg-3">
-                <div class="ta-center op pad">
-                    <h1>This is a main heading</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="">Learn More</a>
-                </div>
-            </div>
-            <div class="bg-4">
-                <div class="ta-center op pad">
-                    <h1>This is a main heading</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <a href="">Learn More</a>
-                </div>
+    <div class="owl-carousel">
+        <div class="bg-1">
+            <div class="ta-center op pad">
+                <h1>This is a main heading</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <a href="">Learn More</a>
             </div>
         </div>
-    </article>
+        <div class="bg-2">
+            <div class="ta-center op pad">
+                <h1>This is a main heading</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <a href="">Learn More</a>
+            </div>
+        </div>
+        <div class="bg-3">
+            <div class="ta-center op pad">
+                <h1>This is a main heading</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <a href="">Learn More</a>
+            </div>
+        </div>
+        <div class="bg-4">
+            <div class="ta-center op pad">
+                <h1>This is a main heading</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <a href="">Learn More</a>
+            </div>
+        </div>
+    </div>
 </section>
 
+<article>
+    <form action="">
+        <label>
+            <ul>
+                <li>Basic</li>
+                <li>$5.01/ Month</li>
+                <li>Lorem ipsum</li>
+                <li>Dolor sit amet, consect</li>
+                <li>Adipiscing elit</li>
+                <li>Proin commodo turpis</li>
+                <li>lacus pulvinarvel</li>
+                <li>Prnare nisi pretium.</li>
+                <li><button type="submit">Buy now</button></li>
+            </ul>
+        </label>
+        <label>
+            <ul>
+                <li>Pro</li>
+                <li>$10.01/ Month</li>
+                <li>Lorem ipsum</li>
+                <li>Dolor sit amet, consect</li>
+                <li>Adipiscing elit</li>
+                <li>Proin commodo turpis</li>
+                <li>lacus pulvinarvel</li>
+                <li>Prnare nisi pretium.</li>
+                <li><button type="submit">Buy now</button></li>
+            </ul>
+        </label>
+        <label>
+            <ul>
+                <li>Premium</li>
+                <li>$20.01/ Month</li>
+                <li>Lorem ipsum</li>
+                <li>Dolor sit amet, consect</li>
+                <li>Adipiscing elit</li>
+                <li>Proin commodo turpis</li>
+                <li>lacus pulvinarvel</li>
+                <li>Prnare nisi pretium.</li>
+                <li><button type="submit">Buy now</button></li>
+            </ul>
+        </label>
+    </form>
+</article>
 
 
+</div>
 
 
 <script
@@ -86,8 +125,8 @@
 
 <script src='https://cdn.jsdelivr.net/mojs/0.265.6/mo.min.js'></script>
 <script>
-    var timelineOpen = new mojs.Timeline({ speed: 1.5 });
-    var timelineClose = new mojs.Timeline({ speed: 2 });
+    var timelineOpen = new mojs.Timeline({speed: 1.5});
+    var timelineClose = new mojs.Timeline({speed: 2});
 
     var _strokeWidth;
     var RADIUS = 15;
@@ -104,13 +143,13 @@
         parent: hamburger,
         x: "50%",
         y: "50%",
-        angle: { 0: 90 },
-        radius: { 30: 45 },
+        angle: {0: 90},
+        radius: {30: 45},
         count: 3,
         children: {
             shape: "circle",
             radius: RADIUS,
-            scale: { 1: 0 },
+            scale: {1: 0},
             fill: ["#ff4338", "#00b3e3", "#3cd52e"],
             duration: 2000,
             easing: "quad.out"
@@ -121,15 +160,15 @@
         parent: hamburger,
         x: "50%",
         y: "50%",
-        angle: { 0: 90 },
-        radius: { 30: 45 },
+        angle: {0: 90},
+        radius: {30: 45},
         count: 3,
         children: {
             shape: "circle",
             radius: RADIUS,
-            scale: { 0: 1 },
-            strokeWidth: { 1: 3 },
-            opacity: { 1: 0 },
+            scale: {0: 1},
+            strokeWidth: {1: 3},
+            opacity: {1: 0},
             fill: "transparent",
             stroke: ["#ff4338", "#00b3e3", "#3cd52e"],
             duration: 2000,
@@ -140,7 +179,7 @@
     // OPEN
     var openBackground = new mojs.Shape({
         fill: "#111820",
-        scale: { 0: 8.5 },
+        scale: {0: 8.5},
         radius: 200,
         delay: 1000,
         easing: "cubic.out",
@@ -159,7 +198,7 @@
     timelineClose.add(openBackground);
 
     //click on the hamburger
-    hamburger.addEventListener("click", function(e) {
+    hamburger.addEventListener("click", function (e) {
         // check if the menu is a cross
         var cross = spanOne.classList.contains("white");
 
